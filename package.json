@@ -1,0 +1,14 @@
+{
+  "name": "webpack-template",
+  "version": "0.0.1",
+  "author": "shoji-k",
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "build": "webpack-cli --mode=production"
+  },
+  "devDependencies": {
+    "webpack": "4.29.6",
+    "webpack-cli": "3.3.0"
+  }
+}
