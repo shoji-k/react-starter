@@ -1,13 +1,16 @@
 const webpack = require('webpack');
 
+const isProduction = process.env.NODE_ENV === 'production'
+const mode = isProduction ? 'production' : 'development'
+
 module.exports = {
-  mode: 'development',
+  mode: mode,
   entry: './src/index.js',
-  devtool: 'inline-source-map',
   output: {
     path: __dirname + '/public',
     filename: 'main.js'
   },
+  devtool: isProduction ? 'source-map' :'inline-source-map',
   devServer: {
     contentBase: './public',
     historyApiFallback: true,
@@ -42,6 +45,11 @@ module.exports = {
     ]
   },
   plugins: [
+    new webpack.DefinePlugin({
+      'process.env': {
+        NODE_ENV: JSON.stringify(process.env.NODE_ENV)
+      }
+    }),
     new webpack.HotModuleReplacementPlugin()
   ],
 }
