@@ -5,7 +5,8 @@
   "license": "MIT",
   "private": true,
   "scripts": {
-    "build": "webpack-cli --mode=production"
+    "build": "webpack-cli --mode=production",
+    "start": "webpack-dev-server"
   },
   "devDependencies": {
     "@babel/core": "7.4.3",
@@ -16,7 +17,8 @@
     "file-loader": "3.0.1",
     "style-loader": "0.23.1",
     "webpack": "4.29.6",
-    "webpack-cli": "3.3.0"
+    "webpack-cli": "3.3.0",
+    "webpack-dev-server": "^3.2.1"
   },
   "dependencies": {
     "react": "16.8.6",

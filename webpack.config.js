@@ -1,3 +1,5 @@
+const webpack = require('webpack');
+
 module.exports = {
   mode: 'development',
   entry: './src/index.js',
@@ -5,6 +7,11 @@ module.exports = {
   output: {
     path: __dirname + '/public',
     filename: 'main.js'
+  },
+  devServer: {
+    contentBase: './public',
+    historyApiFallback: true,
+    hot: true
   },
   module: {
     rules: [
@@ -33,5 +40,8 @@ module.exports = {
         ]
       }
     ]
-  }
+  },
+  plugins: [
+    new webpack.HotModuleReplacementPlugin()
+  ],
 }
