@@ -1,11 +1,18 @@
 module.exports = {
+  mode: 'development',
   entry: './src/index.js',
+  devtool: 'inline-source-map',
   output: {
     path: __dirname + '/public',
     filename: 'main.js'
   },
   module: {
     rules: [
+      {
+        test: /\.js$/,
+        exclude: /node_modules/,
+        loader: 'babel-loader'
+      },
       {
         test: /\.css$/,
         use: [
