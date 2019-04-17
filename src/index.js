@@ -4,10 +4,7 @@ import './style.css'
 import App from './App'
 
 const render = Component => {
-  ReactDOM.render(
-    <Component />,
-    document.getElementById('main')
-  )
+  ReactDOM.render(<Component />, document.getElementById('main'))
 }
 
 if (module.hot) {

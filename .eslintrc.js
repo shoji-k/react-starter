@@ -1,12 +1,11 @@
 module.exports = {
-  "env": {
-    "browser": true,
-    "es6": true
-  },
   "extends": [
-    "plugin:react/recommended"
+    "plugin:prettier/recommended",
+    "plugin:react/recommended",
+    "prettier/react"
   ],
   "plugins": [
+    "prettier",
     "react"
   ],
   "parserOptions": {
@@ -16,27 +15,17 @@ module.exports = {
     "ecmaVersion": 2018,
     "sourceType": "module"
   },
+  "env": {
+    "browser": true,
+    "es6": true
+  },
   "settings": {
     "react": {
       "version": "detect"
     }
   },
   "rules": {
-    "indent": [
-      "error",
-      2
-    ],
-    "linebreak-style": [
-      "error",
-      "unix"
-    ],
-    "quotes": [
-      "error",
-      "single"
-    ],
-    "semi": [
-      "error",
-      "never"
-    ]
+    "prettier/prettier": "error",
+    "react/prop-types": 0
   }
-};
+}
