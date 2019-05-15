@@ -9,6 +9,10 @@
     "start": "webpack-dev-server",
     "lint": "eslint src"
   },
+  "renovate": {
+    "automerge": true,
+    "extends": ["config:base"]
+  },
   "devDependencies": {
     "@babel/core": "7.4.4",
     "@babel/preset-env": "7.4.4",
