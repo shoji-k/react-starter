@@ -10,8 +10,8 @@
     "lint": "eslint src"
   },
   "renovate": {
-    "automerge": true,
-    "extends": ["config:base"]
+    "extends": ["config:base"],
+    "automerge": true
   },
   "devDependencies": {
     "@babel/core": "7.4.4",
