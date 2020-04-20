@@ -10,7 +10,9 @@
     "lint": "eslint src"
   },
   "renovate": {
-    "extends": ["config:base"],
+    "extends": [
+      "config:base"
+    ],
     "automerge": true
   },
   "devDependencies": {
