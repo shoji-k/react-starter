@@ -1,17 +1,25 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 import './style.css'
-import App from './App'
+// import App from './App'
+import Game from './Game'
 
-const render = Component => {
+const render = (Component) => {
   ReactDOM.render(<Component />, document.getElementById('main'))
 }
 
 if (module.hot) {
-  module.hot.accept('./App', () => {
-    const nextApp = require('./App').default
+  module.hot.accept('./Game', () => {
+    const nextApp = require('./Game').default
     render(nextApp)
   })
 }
 
-render(App)
+// if (module.hot) {
+//   module.hot.accept('./App', () => {
+//     const nextApp = require('./App').default
+//     render(nextApp)
+//   })
+// }
+
+render(Game)
