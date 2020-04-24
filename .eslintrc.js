@@ -2,11 +2,13 @@ module.exports = {
   "extends": [
     "plugin:prettier/recommended",
     "plugin:react/recommended",
-    "prettier/react"
+    "prettier/react",
+    "plugin:cypress/recommended"
   ],
   "plugins": [
     "prettier",
-    "react"
+    "react",
+    "cypress"
   ],
   "parserOptions": {
     "ecmaFeatures": {
@@ -17,7 +19,8 @@ module.exports = {
   },
   "env": {
     "browser": true,
-    "es6": true
+    "es6": true,
+    "cypress/globals": true
   },
   "settings": {
     "react": {

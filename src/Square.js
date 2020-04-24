@@ -1,9 +1,9 @@
 import React from 'react'
 
-function Square(props) {
+function Square({ value, onClick, i }) {
   return (
-    <button className="square" onClick={props.onClick}>
-      {props.value}
+    <button className="square" onClick={onClick} data-cy={`cell${i + 1}`}>
+      {value}
     </button>
   )
 }
