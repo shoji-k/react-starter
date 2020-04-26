@@ -2,7 +2,8 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import './style.css'
 // import App from './App'
-import Game from './Game'
+// import Game from './Game'
+import Game from './Game.hook'
 
 const render = (Component) => {
   ReactDOM.render(<Component />, document.getElementById('main'))
