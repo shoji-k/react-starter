@@ -9,12 +9,12 @@ const render = (Component) => {
   ReactDOM.render(<Component />, document.getElementById('main'))
 }
 
-if (module.hot) {
-  module.hot.accept('./Game', () => {
-    const nextApp = require('./Game').default
-    render(nextApp)
-  })
-}
+// if (module.hot) {
+//   module.hot.accept('./Game', () => {
+//     const nextApp = require('./Game').default
+//     render(nextApp)
+//   })
+// }
 
 // if (module.hot) {
 //   module.hot.accept('./App', () => {
