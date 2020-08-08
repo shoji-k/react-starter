@@ -15,7 +15,9 @@ module.exports = {
   devtool: isProduction ? 'source-map' : 'inline-source-map',
   devServer: {
     contentBase: './public',
+    disableHostCheck: true,
     historyApiFallback: true,
+    host: '0.0.0.0',
     hot: true,
   },
   resolve: {
