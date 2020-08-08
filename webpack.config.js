@@ -7,7 +7,7 @@ const mode = isProduction ? 'production' : 'development'
 
 module.exports = {
   mode: mode,
-  entry: './src/index.js',
+  entry: './src/index.tsx',
   output: {
     path: __dirname + '/public',
     filename: '[name].[hash].js',
@@ -18,6 +18,9 @@ module.exports = {
     historyApiFallback: true,
     hot: true,
   },
+  resolve: {
+    extensions: ['.ts', '.tsx', '.js'],
+  },
   module: {
     rules: [
       {
@@ -25,6 +28,7 @@ module.exports = {
         exclude: /node_modules/,
         loader: 'babel-loader',
       },
+      { test: /\.tsx?$/, loader: 'ts-loader' },
       {
         test: /\.css$/,
         use: ['style-loader', 'css-loader'],
