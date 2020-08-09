@@ -1,7 +1,7 @@
-import React, { useState } from 'react'
+import React, { ReactElement, useState } from 'react'
 import Board from './Board'
 
-function calculateWinner(squares) {
+function calculateWinner(squares): number[][] | null {
   const lines = [
     [0, 1, 2],
     [3, 4, 5],
@@ -21,12 +21,12 @@ function calculateWinner(squares) {
   return null
 }
 
-function Game() {
+function Game(): ReactElement {
   const [history, setHistory] = useState([{ squares: Array(9).fill(null) }])
   const [stepNumber, setStepNumber] = useState(0)
   const [xIsNext, setXIsNext] = useState(true)
 
-  const handleClick = (i) => {
+  const handleClick = (i): void => {
     const h = history.slice(0, stepNumber + 1)
     const current = h[h.length - 1]
     const squares = current.squares.slice()
@@ -39,7 +39,7 @@ function Game() {
     setXIsNext(!xIsNext)
   }
 
-  const jumpTo = (step) => {
+  const jumpTo = (step): void => {
     setStepNumber(step)
     setXIsNext(step % 2 === 0)
   }
@@ -57,7 +57,7 @@ function Game() {
     const desc = move ? 'Go to move #' + move : 'Go to game start'
     return (
       <li key={move}>
-        <button onClick={() => jumpTo(move)}>{desc}</button>
+        <button onClick={(): void => jumpTo(move)}>{desc}</button>
       </li>
     )
   })
@@ -65,7 +65,7 @@ function Game() {
   return (
     <div className="game">
       <div className="game-board">
-        <Board squares={current.squares} onClick={(i) => handleClick(i)} />
+        <Board squares={current.squares} onClick={(i): void => handleClick(i)} />
       </div>
       <div className="game-info">
         <div>{status}</div>

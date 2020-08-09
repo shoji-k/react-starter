@@ -5,7 +5,7 @@ import './style.css'
 // import Game from './Game'
 import Game from './Game.hook'
 
-const render = (Component) => {
+const render = (Component): void => {
   ReactDOM.render(<Component />, document.getElementById('main'))
 }
 

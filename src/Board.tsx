@@ -1,10 +1,10 @@
-import React from 'react'
+import React, { ReactElement } from 'react'
 import Square from './Square'
 
-function Board(props) {
-  const renderSquare = (i) => {
+function Board(props): ReactElement {
+  const renderSquare = (i): ReactElement => {
     return (
-      <Square i={i} value={props.squares[i]} onClick={() => props.onClick(i)} />
+      <Square i={i} value={props.squares[i]} onClick={(): void => props.onClick(i)} />
     )
   }
 
