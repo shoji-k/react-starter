@@ -1,11 +1,15 @@
 module.exports = {
   extends: [
-    'plugin:prettier/recommended',
+    'eslint:recommended',
     'plugin:react/recommended',
-    'prettier/react',
+    'plugin:@typescript-eslint/eslint-recommended',
+    'plugin:@typescript-eslint/recommended',
     'plugin:cypress/recommended',
+    'prettier',
+    'prettier/@typescript-eslint'
   ],
-  plugins: ['prettier', 'react', 'cypress'],
+  plugins: ['react', '@typescript-eslint', 'cypress'],
+  parser: '@typescript-eslint/parser',
   parserOptions: {
     ecmaFeatures: {
       jsx: true,
@@ -16,6 +20,7 @@ module.exports = {
   env: {
     browser: true,
     es6: true,
+    node: true,
     'cypress/globals': true,
   },
   settings: {
@@ -24,7 +29,6 @@ module.exports = {
     },
   },
   rules: {
-    'prettier/prettier': 'error',
     'react/prop-types': 0,
   },
 }
