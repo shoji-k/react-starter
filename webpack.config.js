@@ -7,7 +7,7 @@ const mode = isProduction ? 'production' : 'development'
 
 module.exports = {
   mode: mode,
-  entry: './src/index.js',
+  entry: './src/index.tsx',
   output: {
     path: __dirname + '/public',
     filename: '[name].[hash].js',
@@ -15,8 +15,13 @@ module.exports = {
   devtool: isProduction ? 'source-map' : 'inline-source-map',
   devServer: {
     contentBase: './public',
+    disableHostCheck: true,
     historyApiFallback: true,
+    host: '0.0.0.0',
     hot: true,
+  },
+  resolve: {
+    extensions: ['.ts', '.tsx', '.js'],
   },
   module: {
     rules: [
@@ -24,6 +29,11 @@ module.exports = {
         test: /\.js$/,
         exclude: /node_modules/,
         loader: 'babel-loader',
+      },
+      {
+        test: /\.tsx?$/,
+        exclude: /node_modules/,
+        loader: 'ts-loader',
       },
       {
         test: /\.css$/,

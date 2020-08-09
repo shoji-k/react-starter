@@ -1,13 +1,13 @@
-import React, { Component } from 'react'
+import React, { Component, ReactElement } from 'react'
 
 class Hello extends Component {
-  render() {
+  render(): ReactElement {
     return <h1>Hello</h1>
   }
 }
 
 class App extends Component {
-  render() {
+  render(): ReactElement {
     return <Hello />
   }
 }

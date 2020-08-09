@@ -5,16 +5,16 @@ import './style.css'
 // import Game from './Game'
 import Game from './Game.hook'
 
-const render = (Component) => {
+const render = (Component): void => {
   ReactDOM.render(<Component />, document.getElementById('main'))
 }
 
-if (module.hot) {
-  module.hot.accept('./Game', () => {
-    const nextApp = require('./Game').default
-    render(nextApp)
-  })
-}
+// if (module.hot) {
+//   module.hot.accept('./Game', () => {
+//     const nextApp = require('./Game').default
+//     render(nextApp)
+//   })
+// }
 
 // if (module.hot) {
 //   module.hot.accept('./App', () => {

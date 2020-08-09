@@ -1,7 +1,7 @@
-import React from 'react'
+import React, { ReactElement } from 'react'
 import Board from './Board'
 
-function calculateWinner(squares) {
+function calculateWinner(squares): number[][] | null {
   const lines = [
     [0, 1, 2],
     [3, 4, 5],
@@ -21,7 +21,15 @@ function calculateWinner(squares) {
   return null
 }
 
-class Game extends React.Component {
+type cell = 'X' | 'O' | null
+
+interface Istate {
+  history: { squares: cell[] }[],
+  stepNumber: number,
+  xIsNext: boolean
+}
+
+class Game extends React.Component<{}, Istate> {
   constructor(props) {
     super(props)
     this.state = {
@@ -35,7 +43,7 @@ class Game extends React.Component {
     }
   }
 
-  handleClick(i) {
+  handleClick(i): void {
     const history = this.state.history.slice(0, this.state.stepNumber + 1)
     const current = history[this.state.stepNumber]
     const squares = current.squares.slice()
@@ -54,14 +62,14 @@ class Game extends React.Component {
     })
   }
 
-  jumpTo(step) {
+  jumpTo(step): void {
     this.setState({
       stepNumber: step,
       xIsNext: step % 2 === 0,
     })
   }
 
-  render() {
+  render(): ReactElement {
     const history = this.state.history
     const current = history[this.state.stepNumber]
     const winner = calculateWinner(current.squares)
@@ -76,7 +84,7 @@ class Game extends React.Component {
       const desc = move ? 'Go to move #' + move : 'Go to game start'
       return (
         <li key={move}>
-          <button onClick={() => this.jumpTo(move)}>{desc}</button>
+          <button onClick={(): void => this.jumpTo(move)}>{desc}</button>
         </li>
       )
     })
@@ -86,7 +94,7 @@ class Game extends React.Component {
         <div className="game-board">
           <Board
             squares={current.squares}
-            onClick={(i) => this.handleClick(i)}
+            onClick={(i): void => this.handleClick(i)}
           />
         </div>
         <div className="game-info">
