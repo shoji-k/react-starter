@@ -28,14 +28,14 @@ function Game() {
 
   const handleClick = (i) => {
     const h = history.slice(0, stepNumber + 1)
-    const current = h[stepNumber]
+    const current = h[h.length - 1]
     const squares = current.squares.slice()
     if (calculateWinner(squares) || squares[i]) {
       return
     }
     squares[i] = xIsNext ? 'X' : 'O'
-    setHistory(history.concat([{ squares: squares }]))
-    setStepNumber(history.length)
+    setHistory(h.concat([{ squares: squares }]))
+    setStepNumber(h.length)
     setXIsNext(!xIsNext)
   }
 
@@ -45,6 +45,7 @@ function Game() {
   }
   const current = history[stepNumber]
   const winner = calculateWinner(current.squares)
+
   let status
   if (winner) {
     status = 'Winner: ' + winner
