@@ -2,7 +2,7 @@ module.exports = {
   extends: [
     'plugin:prettier/recommended',
     'plugin:react/recommended',
-    'prettier/react',
+    'prettier',
     'plugin:cypress/recommended',
   ],
   plugins: ['prettier', 'react', 'cypress'],
