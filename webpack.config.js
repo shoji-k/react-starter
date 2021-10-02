@@ -10,11 +10,11 @@ module.exports = {
   entry: './src/index.js',
   output: {
     path: __dirname + '/public',
-    filename: '[name].[hash].js',
+    filename: '[name].[contenthash].js',
   },
   devtool: isProduction ? 'source-map' : 'inline-source-map',
   devServer: {
-    contentBase: './public',
+    static: './public',
     historyApiFallback: true,
     hot: true,
   },
