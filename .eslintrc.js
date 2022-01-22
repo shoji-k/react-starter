@@ -1,11 +1,10 @@
 module.exports = {
   extends: [
-    'plugin:prettier/recommended',
     'plugin:react/recommended',
-    'prettier',
     'plugin:cypress/recommended',
+    'prettier',
   ],
-  plugins: ['prettier', 'react', 'cypress'],
+  plugins: ['react', 'cypress'],
   parserOptions: {
     ecmaFeatures: {
       jsx: true,
@@ -24,7 +23,6 @@ module.exports = {
     },
   },
   rules: {
-    'prettier/prettier': 'error',
     'react/prop-types': 0,
   },
 }

@@ -7,7 +7,8 @@
   "scripts": {
     "build": "webpack-cli --mode=production",
     "start": "webpack-cli serve --mode development",
-    "lint": "eslint src"
+    "lint": "eslint src",
+    "cy:run": "cypress run"
   },
   "renovate": {
     "extends": [
@@ -26,7 +27,6 @@
     "eslint": "7.32.0",
     "eslint-config-prettier": "8.3.0",
     "eslint-plugin-cypress": "^2.12.1",
-    "eslint-plugin-prettier": "4.0.0",
     "eslint-plugin-react": "7.28.0",
     "file-loader": "6.2.0",
     "html-webpack-plugin": "5.5.0",
